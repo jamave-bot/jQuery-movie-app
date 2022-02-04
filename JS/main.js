@@ -11,7 +11,7 @@ $(document).ready(() =>{
 const getMovies = (searchText) =>{
     // console.log(searchText, API_KEY)
     // console.log(`https://www.omdbapi.com/?s=${searchText}&apikey=${API_KEY}`);
-    axios.get(`https://www.omdbapi.com/?s=${searchText}&apikey=${API_KEY}`)
+    axios.get(`https://www.omdbapi.com/?s=${searchText}&apikey=${process.env.API_KEY}`)
         .then((res)=>{
             console.log(res);
             let movies = res.data.Search;
@@ -43,7 +43,7 @@ const movieSelected = (id) =>{
 
 const getMovie = () =>{
     let movieId = sessionStorage.getItem('movieId');
-    axios.get(`https://www.omdbapi.com/?i=${movieId}&apikey=${API_KEY}`)
+    axios.get(`https://www.omdbapi.com/?i=${movieId}&apikey=${process.env.API_KEY}`)
         .then((res)=>{
             console.log(res);
             let movie = res.data;
