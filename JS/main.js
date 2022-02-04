@@ -1,4 +1,5 @@
-import 'dotenv/config'
+
+const API_KEY="test"
 
 $(document).ready(() =>{
     $('#searchForm').on('submit', (e)=>{
@@ -9,6 +10,7 @@ $(document).ready(() =>{
 })
 
 const getMovies = (searchText) =>{
-    console.log(`http://www.omdapi.com?s=${searchText}+apikey=${process.env.API_KEY}`);
-    // axios.get(`http://www.omdapi.com?s=${searchText}&apikey=${process.env.API_KEY}`)
+    console.log(searchText, API_KEY)
+    console.log(`http://www.omdapi.com?s=${searchText}+apikey=${API_KEY}`);
+    // axios.get(`http://www.omdapi.com?s=${searchText}&apikey=${API_KEY}`)
 }
